@@ -1,0 +1,26 @@
+.page{
+	position: relative;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+.row-bordered{
+	> [class*='col-']{
+		&:nth-child(odd){
+			@include media-breakpoint-up(xl) {
+				border-right: 1px solid #dbdbdb;
+			}
+		}
+		&:nth-child(4){
+			border-right: none;
+		}
+	}
+	> [class*='col-']{
+		border-top: 1px solid #dbdbdb;
+		border-bottom: 1px solid #dbdbdb;
+		@include media-breakpoint-up(xl) {
+			border-right: 1px solid #dbdbdb;
+		}
+	}
+	
+}

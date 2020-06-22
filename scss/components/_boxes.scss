@@ -1,0 +1,55 @@
+.option-box{
+	&__header{
+		background-color: #606a76;
+		padding: 0 26px;
+	}
+	&__body{
+		padding: 24px 36px 28px;
+		background-color: $gray-600;
+	}
+}
+
+.price-filter-box{
+	display: flex;
+	align-items: center;
+	.form-number-title{
+		color: $white;
+	}
+	.form-number-title{
+		min-width: 57px;
+		flex-grow: 1;
+		padding-right: 5px;
+	}
+}
+
+.filter-box-buttons{
+	.cross{
+		width: 15px;
+		height: 15px;
+		top: 7px;
+		right: 7px;
+		display: inline-flex;
+		justify-content: center;
+		&:before,&:after{
+			content: '';
+			position: absolute;
+			top: 50%;
+			width: 15px;
+			height: 1px;
+			background-color: $white;
+			transform: rotate(45deg);
+		}
+		&:after{
+			transform: rotate(-45deg);
+		}
+	}
+	.button-reset,.button-common{
+		min-width: 210px;
+		text-transform: none;
+		font-size: 14px;
+	}
+	.button-common{
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+}

@@ -1,0 +1,46 @@
+.tabs-nav{
+	display: flex;
+	flex-direction: column;
+	@include media-breakpoint-up(sm) {
+		display: inline-flex;
+		flex-direction: row;
+	}
+	align-items: center;
+	background-color: #efefef;
+	padding: 4px;
+	.nav-item{
+		background-color: #efefef;
+		min-width: 142px;
+		text-align: center;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 14px;
+		color: $gray-600;
+		min-height: 38px;
+		width: 100%;
+		@include media-breakpoint-up(sm) {
+			width: auto;
+		}
+		&.active,&:hover{
+			background-color: $primary;
+			color: $white;
+		}
+	}
+	.nav-item + .nav-item{
+		margin-left: 4px;
+	}
+}
+
+.tab-content {
+	display: none;
+	padding-top: 28px;
+}
+
+.tab-content.active {
+	display: block;
+}
+
+
+
+

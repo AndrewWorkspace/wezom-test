@@ -1,0 +1,222 @@
+.header {
+	
+	&__aside {
+		position: relative;
+		z-index: 4;
+		background-color: $gray-600;
+		color: #c3c3c3;
+	}
+	
+	&__main {
+		padding-top: 30px;
+		@include media-breakpoint-up(xl) {
+			padding-top: 12px;
+		}
+		.brand {
+			display: inline-block;
+			
+			img {
+				transition: transform .5s;
+			}
+			
+			&:hover {
+				transform: rotateY(180deg);
+				
+				img {
+					transform: rotateY(-180deg);
+					transition: transform .5s;
+				}
+			}
+		}
+	}
+	
+	&__nav {
+		position: fixed;
+		top: 50px;
+		left: 0;
+		bottom: 0;
+		background-color: $gray-600;
+		width: 250px;
+		padding-top: 20px;
+		transform: translateX(-100%);
+		transition: $transition-base;
+		
+		&--active {
+			transform: translateX(0);
+			transition: $transition-base;
+		}
+		
+		ul {
+			display: flex;
+			flex-direction: column;
+			
+			li {
+				a {
+					display: block;
+					@include link($gray-light, $white);
+					padding: 19px 17px;
+					text-transform: uppercase;
+					font-size: 12px;
+					position: relative;
+					
+					&:before {
+						content: '';
+						position: absolute;
+						display: block;
+						bottom: 0;
+						left: 0;
+						height: 2px;
+						width: 0;
+						background-color: #ffc925;
+						transition: $transition-base;
+					}
+					
+					&:hover, &.active {
+						color: $white;
+						
+						&:before {
+							width: 100%;
+							transition: $transition-base;
+						}
+					}
+				}
+			}
+		}
+		
+		@include media-breakpoint-up(md) {
+			position: relative;
+			padding: 0;
+			transform: none;
+			width: auto;
+			top: 0;
+			ul {
+				flex-direction: row;
+			}
+		}
+		
+	}
+	
+	.button-sm {
+		padding: 0 26px;
+		height: 100%;
+		
+		&:hover {
+			color: $white;
+		}
+	}
+	
+	.nav-toggle {
+		position: relative;
+		cursor: pointer;
+		display: inline-flex;
+		flex-direction: column;
+		padding: 20px 10px;
+		
+		span {
+			position: relative;
+			display: block;
+			height: 2px;
+			pointer-events: none; // stop event
+			background: #ffffff;
+			transition: background .2s ease-out;
+			width: 18px;
+			
+			&:before {
+				content: '';
+				background: #ffffff;
+				display: block;
+				height: 100%;
+				position: absolute;
+				transition: $transition-base;
+				width: 100%;
+				top: -5px;
+			}
+			
+			&:after {
+				content: '';
+				background: #ffffff;
+				display: block;
+				height: 100%;
+				position: absolute;
+				transition: $transition-base;
+				width: 100%;
+				bottom: -5px;
+			}
+		}
+		
+		&.active {
+			span {
+				background: transparent;
+				
+				&:before {
+					transform: rotate(-47deg) translateY(-50%);
+					top: 50%;
+				}
+				
+				&:after {
+					transform: rotate(47deg) translateY(-50%);
+					top: 50%;
+					bottom: auto;
+					left: -1px;
+				}
+			}
+		}
+	}
+	
+	@include media-breakpoint-up(md) {
+		.nav-toggle {
+			display: none;
+		}
+	}
+	
+	&__contact-group {
+		position: relative;
+		width: 100%;
+		min-height: 49px;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		margin-top: -10px;
+		> *{
+			margin-top: 10px;
+		}
+		@include media-breakpoint-up(sm) {
+			flex-wrap: nowrap;
+			flex-direction: row;
+		}
+		&-phone {
+			min-width: 200px;
+			width: 100%;
+			height: 100%;
+			background-color: #f5f5f5;
+			padding: 10px 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 49px;
+			@include media-breakpoint-up(sm) {
+				min-width: 250px;
+				flex-grow: 1;
+				justify-content: flex-start;
+			}
+			@include media-breakpoint-up(lg) {
+				min-width: 358px;
+			}
+			a {
+				font-size: 16px;
+				font-weight: 700;
+				font-style: italic;
+				@include link($accent-black, $primary);
+			}
+		}
+		
+		&-btn {
+			min-width: 197px;
+		}
+		
+	}
+}
+
+
+

@@ -1,0 +1,57 @@
+// Standard link style
+a {
+	transition: $transition-base;
+	
+	&,
+	&:focus,
+	&:active,
+	&:hover {
+		text-decoration: $link-decoration;
+	}
+	
+	@include link($link-color, $link-hover-color);
+	
+	&[href*='tel'],
+	&[href*='mailto'] {
+		white-space: nowrap;
+	}
+}
+
+.link-hover {
+	color: $link-hover-color;
+}
+
+.link-press {
+	color: $link-press-color;
+}
+
+.link-underlined{
+	display: inline-block;
+	text-decoration: underline;
+	
+}
+
+.link-gray-700{
+	@include link($gray-700,$gray-700);
+}
+
+
+.arrow-link{
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	text-decoration: underline;
+	color: $black;
+	&:hover{
+		color: $primary;
+	}
+	&:after{
+		content: '';
+		top: 50%;
+		width: 15px;
+		height: 3px;
+		display: inline-block;
+		margin-left: 10px;
+		background-image: url('../img/link-arrow-15x3.png');
+	}
+}

@@ -1,0 +1,110 @@
+.site-wrap {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	
+	&.site-wrap--overlay {
+		position: relative;
+		transition: transform .35s;
+		
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 3;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: rgba(#000, .7);
+		}
+	}
+}
+
+
+.modal {
+	z-index: 12;
+	position: relative;
+	top: 20%;
+	bottom: auto;
+	width: 100%;
+	height: auto;
+	margin: 0 auto 40px;
+	opacity: 0;
+	box-shadow: 0 0 25px rgba(68, 60, 34, 0.3);
+	transition: opacity, top, bottom .35s ease-in-out;
+	&.fadeOut {
+		opacity: 1;
+		visibility: visible;
+	}
+	
+	
+}
+
+.modal-overlay {
+	z-index: 11;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	visibility: hidden;
+	opacity: 0;
+	background-color: rgba(35, 45, 53, .5);
+	filter: alpha(opacity=80);
+	cursor: pointer;
+	transition: all .25s ease-in-out;
+	padding: 0 15px;
+	&.fadeOut {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.modal-open {
+	overflow: hidden;
+}
+
+.modal__close {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	justify-content: center;
+	z-index: 20;
+	@include media-breakpoint-up(md) {
+		top: -50px;
+		right: -50px;
+		width: 35px;
+		height: 35px;
+	}
+	&:before,&:after{
+		content: '';
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		height: 1px;
+		background-color: #dadada;
+		transform: rotate(45deg);
+	}
+	&:after{
+		transform: rotate(-45deg);
+	}
+}
+
+.modal__content {
+	display: flex;
+	flex-direction: column;
+}
+
+.enter-modal{
+	background-color: $white;
+}
+.modal-phone{
+	padding: 40px;
+	background-color: $white;
+}

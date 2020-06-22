@@ -1,0 +1,65 @@
+#{headings()} {
+	margin-bottom: 0;
+	margin-top: 0;
+	a {
+		color: inherit;
+		
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+
+
+h1,
+.h1 {
+
+}
+
+h2,
+.h2 {
+	font-size: 28px;
+	@include media-breakpoint-up(md) {
+		font-size: 30px;
+	}
+	@include media-breakpoint-up(xl) {
+		font-size: 36px;
+	}
+}
+
+h3,
+.h3 {
+	font-size: 24px;
+	@include media-breakpoint-up(xl) {
+		font-size: 26px;
+	}
+	
+}
+
+h4,
+.h4 {
+	font-size: 20px;
+	@include media-breakpoint-up(xl) {
+		font-size: 24px;
+	}
+	&.card-title{
+		@include media-breakpoint-up(xl) {
+			font-size: 26px;
+		}
+	}
+}
+
+h5,
+.h5 {
+	font-size: 18px;
+	&.card-title{
+		@include media-breakpoint-up(xl) {
+			font-size: 20px;
+		}
+	}
+}
+
+h6,
+.h6 {
+
+}

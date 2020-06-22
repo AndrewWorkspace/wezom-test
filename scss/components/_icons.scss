@@ -1,0 +1,66 @@
+[class*='icon-sprite']{
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: top center;
+	transition: $transition-base;
+	overflow: hidden;
+}
+
+.icon-sprite-car{
+	width: 40px;
+	height: 17px;
+	background-image: url("../img/sprites/sprite-car-40x34.png");
+}
+
+
+.icon-sprite-track{
+	width: 46px;
+	height: 32px;
+	background-image: url("../img/sprites/sprite-truck-46x65.png");
+}
+
+.icon-sprite-wheel{
+	width: 25px;
+	height: 25px;
+	background-image: url("../img/sprites/sprite-wheel-25x51.png");
+}
+
+.icon-sprite-oil{
+	width: 28px;
+	height: 30px;
+	background-image: url("../img/sprites/sprite-oil-22x59.png");
+}
+
+
+.icon-sprite-battery{
+	width: 24px;
+	height: 25px;
+	background-image: url("../img/sprites/sprite-battery-26x49.png");
+}
+
+
+
+
+.icon-sprite-vk{
+	width: 16px;
+	height: 10px;
+	background-image: url('../img/sprites/icon-vk-16x20.png');
+}
+
+.icon-sprite-fb{
+	width: 6px;
+	height: 16px;
+	background-image: url('../img/sprites/icon-fb-6x33.png');
+}
+
+.icon-sprite-twitter{
+	width: 16px;
+	height: 14px;
+	background-image: url('../img/sprites/icon-twitter-16x28.png');
+}
+
+.icon-sprite-youtube{
+	width: 16px;
+	height: 12px;
+	background-image: url('../img/sprites/icon-youtube-16x23.png');
+}

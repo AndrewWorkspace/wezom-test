@@ -1,0 +1,30 @@
+* + .form{
+	margin-top: 30px;
+	
+}
+* + .form-wrap.form-button,
+.form-button{
+	margin-top: 25px;
+}
+
+* + .social-list__big{
+	margin-top: 30px;
+	@include media-breakpoint-up(xl) {
+		margin-top: 50px;
+	}
+}
+
+
+//Insets
+.header + *{
+	padding-top: 40px;
+}
+
+.row-no-gutter{
+	margin-left: 0;
+	margin-right: 0;
+	>  [class*='col-']{
+		padding: 0;
+	}
+	
+}
