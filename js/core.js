@@ -70,6 +70,7 @@ const myModal = {
 		modal.classList.remove('fadeOut');
 		modal.dataset.modalclass ? modal.classList.remove(modal.dataset.modalclass) : null;
 		modal.dataset.modalclass = '';
+		modal.removeAttribute('data-modalclass');
 	}
 };
 
