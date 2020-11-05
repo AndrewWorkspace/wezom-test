@@ -68,7 +68,7 @@ const myModal = {
 		bodyElement.classList.remove(MODAL_OPEN);
 		modalParent.classList.remove('fadeOut');
 		modal.classList.remove('fadeOut');
-		modal.classList.remove(modal.dataset.modalclass);
+		modal.dataset.modalclass ? modal.classList.remove(modal.dataset.modalclass) : null;
 		modal.dataset.modalclass = '';
 	}
 };
