@@ -46,9 +46,13 @@ const myModal = {
 
 	open(id, width) { //============ OPEN
 		const temp = document.querySelector(id);
+		const modalClass = temp.dataset.parentclass;
 		bodyElement.classList.add(MODAL_OPEN);
 		const newContent = temp.content.cloneNode(true);
-
+		if(modalClass !== ''){
+			modal.classList.add(modalClass)
+			modal.dataset.modalclass = modalClass || '';
+		}
 		if (width) {
 			modal.style.maxWidth = width + 'px';
 		}
@@ -68,7 +72,9 @@ const myModal = {
 		bodyElement.classList.remove(MODAL_OPEN);
 		modalParent.classList.remove('fadeOut');
 		modal.classList.remove('fadeOut');
-		modal.removeAttribute("style")
+		modal.removeAttribute("style");
+		modal.classList.remove(modal.dataset.modalclass);
+		modal.dataset.modalclass = '';
 	}
 };
 
