@@ -34,8 +34,7 @@ const myModal = {
 			const target = evt.target;
 
 			if (target.dataset.modal) {
-				const width = target.dataset.modalWidth || '400';
-				this.open(target.dataset.modal, width)
+				this.open(target.dataset.modal)
 			}
 
 			if (target.classList.contains('modal-overlay') || target.classList.contains('js-modal__close')) {
@@ -44,19 +43,16 @@ const myModal = {
 		})
 	},
 
-	open(id, width) { //============ OPEN
+	open(id) { //============ OPEN
 		const temp = document.querySelector(id);
-		const modalClass = temp.dataset.parentclass;
+		const modalClass = temp.dataset.parentclass || '';
 		bodyElement.classList.add(MODAL_OPEN);
 		const newContent = temp.content.cloneNode(true);
 		if(modalClass !== ''){
 			modal.classList.add(modalClass)
 			modal.dataset.modalclass = modalClass || '';
 		}
-		if (width) {
-			modal.style.maxWidth = width + 'px';
-		}
-
+		
 		this.setContent(newContent);
 		modalParent.classList.add('fadeOut');
 		modal.classList.add('fadeOut');
@@ -72,7 +68,6 @@ const myModal = {
 		bodyElement.classList.remove(MODAL_OPEN);
 		modalParent.classList.remove('fadeOut');
 		modal.classList.remove('fadeOut');
-		modal.removeAttribute("style");
 		modal.classList.remove(modal.dataset.modalclass);
 		modal.dataset.modalclass = '';
 	}
